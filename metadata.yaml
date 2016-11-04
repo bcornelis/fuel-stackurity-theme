@@ -7,7 +7,7 @@ version: '1.0.0'
 # Description
 description: Installs the Stackurity theme and sets this as the default theme
 # Required fuel version
-fuel_version: ['9.0', '9.1','10']
+fuel_version: ['9.0', '9.1']
 # Specify license of your plugin
 licenses: ['MIT']
 # Specify author or company name

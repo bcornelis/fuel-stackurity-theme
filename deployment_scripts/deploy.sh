@@ -11,7 +11,7 @@ echo "AVAILABLE_THEMES = [('stackurity', 'Stackurity', 'themes/stackurity')]" > 
 
 # recompile
 /usr/share/openstack-dashboard/manage.py compress --force 
-/usr/share/openstack-dashboard/manage.py collectstatic 
+/usr/share/openstack-dashboard/manage.py collectstatic --noinput 
 
 # and reload apache
 service apache2 reload
