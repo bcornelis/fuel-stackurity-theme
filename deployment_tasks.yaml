@@ -2,12 +2,15 @@
 # can specify new tasks for any roles, even built-in ones.
 
 - id: fuel-stackurity-theme-deployment-puppet
-  type: puppet
+  type: shell
   role: [fuel-stackurity-theme_role]
   version: 2.0.0
   role: [primary-controller, controller]
-  requires: [horizon]
+  required_for: [post_deployment_end]
+  requires: [post_deployment_start,horizon]
   parameters:
-    puppet_manifest: "stackurity_setup.pp"
-    puppet_modules: "/etc/puppet/modules"
-    timeout: 300
+    cmd: bash deploy.sh
+    retries: 3
+    interval: 20
+    timeout: 180
+
